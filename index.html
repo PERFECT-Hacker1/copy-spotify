@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <link rel="manifest" href="manifest.json">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1db954">
+  
+
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- Hamburger menu icon, सिर्फ mobile को दिखाने के लिए -->
+<div class="hamburger" id="openSidebar">&#9776;</div>
+<div id="sidebar-overlay"></div>
+
+
+
+  <div class="main bg-black">
+    <!-- Optional close icon inside the sidebar -->
+    
+
+      <div class="left">
+        <!-- Optional close icon inside the sidebar -->
+<div class="close-btn" id="closeSidebar">&times;</div>
+<li id="showDownloaded" style="cursor:pointer;">📥 Downloaded Songs</li>
+
+
+        <div class="home bg-red rounded n-1 p-1"> 
+          <div class="logo"><img src="image/logo.png"></div>
+          <ul>
+            <li class="invert"><img src="image/home.png">Home</li>
+            <li class="invert"><img src="image/search.png">Search</li>
+          </ul>
+        </div>
+        <div class="library bg-red rounded n-1 p-1">
+          <div class="heding">
+            <img src="image/library.png">
+            <h2>Your library</h2>
+          </div>
+        
+          <div class="songList">
+               <ul>
+                  
+                  
+               </ul>
+          </div>
+        
+          <!--<div class="footer">
+             <div><a href="#"><span>logal</span></a></div>
+             <div><a href="#"><span>privicycondition</span></a></div>
+             <div><a href="#"><span>privicypolicy</span></a></div>
+             <div><a href="#"><span>conctest</span></a></div>
+             <div><a href="#"><span>logal6789</span></a></div>
+             <div><a href="#"><span>Accessibility</span></a></div>
+            </div> -->
+            <button id="logoutBtn" style="position:fixed; right:16px; top:12px; z-index:9999; background:#ef4444; color:#fff; border:none; border-radius:6px; padding:8px 12px; cursor:pointer;">
+  Logout
+</button>
+<script>
+  document.getElementById("logoutBtn").onclick = () => {
+    localStorage.removeItem("token");
+    location.href = "login.html";
+  };
+</script>
+        </div>
+      </div>   
+      
+     
+     
+     
+     
+  
+    <div class="right  rounded n-1">
+      
+      <div class="header">
+        <div class="nav">
+          
+         
+          
+          
+          <input type="text" placeholder="search play list">
+        </div>
+        <div class="button">
+         <!-- <button class="sin-up">sin up</button>
+          <button class="sig-in">sig in</button> -->
+        </div>
+      </div>
+      
+      <div class="spotify-playlist">
+        <h1></h1>
+        <div class="card-container">
+      
+          
+        </div>
+        
+        <div class="play-bar">
+          <div class="seekbar">
+            <div class="circle"></div>
+          </div>
+          
+          <div class="abovebar">
+            <div class="songinfo">
+            
+            </div>
+            <div class="song-button">
+              <img id="previous" src="previous.svg">
+              <img id="play"src="image/play.png">
+              <img id="next"src="next.svg">
+              <img id="downloadSong" src="image/download.png" alt="Download" style="cursor:pointer;">
+            </div>
+            <div class="songtime">
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Service Worker registered"))
+    .catch(err => console.log("SW registration failed", err));
+}
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - Music App</title>
+  <style>
+    body { font-family: sans-serif; background: #121212; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .form-container { background: #1e1e1e; padding: 20px; border-radius: 8px; width: 300px; }
+    input, button { width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: none; }
+    input { background: #2c2c2c; color: white; }
+    button { background: #1db954; color: white; cursor: pointer; }
+    a { color: #1db954; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Account</h2>
+    <form id="signupForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      
+      <label style="font-size:14px;">
+        <input type="checkbox" id="acceptTerms" required>
+        I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
+      </label>
+      
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+
+  <script>
+    /*document.getElementById("signupForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const acceptTerms = document.getElementById("acceptTerms").checked;
+
+      if (!acceptTerms) {
+        alert("You must accept the Terms & Conditions to sign up.");
+        return;
+      }
+
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+      localStorage.setItem("acceptedTerms", "true");
+
+      alert("Signup successful! Please login.");
+      window.location.href = "login.html";
+    });*/
+    
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const acceptTerms = document.getElementById("acceptTerms").checked;
+
+  // Email format check
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  if (!acceptTerms) {
+    alert("You must accept the Terms & Conditions to sign up.");
+    return;
+  }
+
+  localStorage.setItem("email", email);
+  localStorage.setItem("password", password);
+  localStorage.setItem("acceptedTerms", "true");
+
+  alert("Signup successful! Please login.");
+  window.location.href = "login.html";
+});
+  </script>
+</body>
+</html>

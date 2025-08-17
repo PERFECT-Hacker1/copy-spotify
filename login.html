@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Music App</title>
+  <style>
+    body { font-family: sans-serif; background: #121212; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .form-container { background: #1e1e1e; padding: 20px; border-radius: 8px; width: 300px; }
+    input, button { width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: none; }
+    input { background: #2c2c2c; color: white; }
+    button { background: #1db954; color: white; cursor: pointer; }
+    a { color: #1db954; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      const storedEmail = localStorage.getItem("email");
+      const storedPass = localStorage.getItem("password");
+      const acceptedTerms = localStorage.getItem("acceptedTerms");
+
+      if (email === storedEmail && password === storedPass) {
+        if (acceptedTerms === "true") {
+          alert("Login successful!");
+          window.location.href = "index.html";
+        } else {
+          alert("You must accept Terms & Conditions before using the app.");
+          window.location.href = "signup.html";
+        }
+      } else {
+        alert("Invalid email or password.");
+      }
+    });
+  </script>
+</body>
+</html>

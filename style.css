@@ -1,0 +1,639 @@
+:root{
+  --a:0;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: black;
+  color:white;
+}
+
+.main{
+  display: flex;
+  
+}
+
+.border{
+  border: 2px solid red;
+}
+.left{
+  width: 35%;
+}
+
+.right{
+  width:65%;
+  position: relative;
+  
+}
+
+.logo img{
+width:90px; 
+
+}
+.logo{
+  background-color: rgb(10,10,10);
+  
+  
+}
+
+
+.home{
+  
+}
+
+.home ul li{
+  color:black;
+  list-style: none;
+  display: flex;
+  width:14px;
+  gap:15px;
+}
+
+.home ul li img{
+  width: 50px;
+  
+  
+}
+
+.bg-black{
+  background: black;
+  color: white;
+}
+
+.invert{
+  filter: invert(1)
+}
+
+.bg-red{
+  background-color: rgb(10, 10, 10);
+}
+
+.rounded{
+  border-radius: 7px;
+}
+
+.n-1{
+  margin: 5px;
+}
+
+.p-1{
+  padding:10px;
+}
+
+.nav{
+  margin:20px;
+  
+}
+
+.heding{
+  display:flex;
+  gap:15px;
+  width:100%;
+  padding-top: 14px;
+  align-items: center;
+  font-size: 10px;
+}
+
+.heding img{
+  width:76px;
+}
+
+.library{
+  min-height: 87vh;
+  position: relative;
+}
+
+.footer{
+  display:flex;
+  font-size: 2px;
+  gap:10px;
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0px;
+}
+
+.footer a{
+  color:white;
+}
+
+.right{
+  background-color: rgb(20, 20, 2);
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(34, 34, 34);
+}
+
+.header > *{
+  padding: 4px;
+}
+
+.spotify-playlist{
+  padding:16px;
+  
+}
+
+.card-container{
+  margin: 15px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+ .card{
+  width: 100%;
+  max-width: 150px;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #252525;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card:hover{
+  background-color:black;
+  cursor: pointer;
+  --a:1;
+}
+
+.card > *{
+  padding-top: 8px;
+}
+
+.play {
+            width: 50px; /* Size of the circular box */
+            height: 50px;
+            background-color: #1DB954; /* Green background (Spotify-like green) */
+            border-radius: 50%; /* Makes it circular */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centers the image inside the circle */
+            overflow: hidden;
+            position:absolute;
+            right: 17px;
+            bottom:50px;
+            opacity:var(--a);
+            transition: all 1s ease-out;
+        }
+
+        .play img {
+            width: 40px; /* Adjust the size of the play button image */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            
+        }
+.card img{
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+/* Container styling */
+.button {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* General button styling */
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sign Up button styling */
+.sin-up {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  box-shadow: 0 4px 15px rgba(110, 142, 251, 0.4);
+}
+
+/* Sign In button styling */
+.sig-in {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Hover effects */
+.sin-up:hover, .sig-in:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ripple effect on click */
+button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+button:active::after {
+  width:200px;
+  height:200px;
+  opacity: 0;
+}
+
+/* Animation for button entrance */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.sin-up {
+  animation-delay: 0.1s;
+}
+
+.sig-in {
+  animation-delay: 0.2s;
+}
+
+/*.play-bar{
+  position: absolute;
+  bottom:20px;
+  background-color: rgb(218, 165, 32);
+  width:90%;
+  padding:12px;
+  border-radius: 20px;
+  
+}*/
+.play-bar {
+      position: absolute;
+      bottom: 0px;
+      background-color: rgb(218, 165, 32); /* Gold */
+      width: 80%;
+      height: 8vh;
+      padding: 0px 0px;
+      border-radius: 20px;
+      display: flex; /* Center content */
+      color: #fff; /* White text for contrast */
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      z-index: 1; /* Ensure play-bar is above border */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle depth */
+    }
+    /* Animated glowing border */
+    .play-bar::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      background: linear-gradient(45deg, #ffd700, #ffa500, #ffd700); /* Gold-orange glow */
+      border-radius: 24px; /* Wraps 20px radius */
+      filter: blur(6px); /* Glow effect */
+      z-index: -1; /* Behind play-bar */
+      animation: glow 2s ease-in-out infinite; /* Pulsating animation */
+    }
+    @keyframes glow {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1.02);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+    }
+    /* Hover effect */
+    .play-bar:hover {
+      background-color: rgb(255, 215, 0); /* Brighter gold on hover */
+      transition: background-color 0.3s ease;
+    }
+.seekbar{
+  height: 2px;
+  width:96%;
+  background: red;
+  position: absolute;
+  bottom:0;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.circle{
+  height: 13px;
+  width:13px;
+  border-radius: 10px;
+  background-color: red;
+  position: relative;
+  bottom: 6px;
+  left:0%;
+  transition: left 0.5s;
+}
+
+.song-button{
+  display: flex;
+  justify-content: center;
+  gap:16px;
+}
+.song-button img{
+  width:20px;
+  cursor: pointer;
+}
+
+.songList{
+  height: 644px;
+  overflow: auto;
+}
+
+.songList ul{
+  padding: 0 12px;
+  
+}
+
+.songList ul li{
+  list-style-type: decimal;
+  display: flex;
+  gap:10px;
+  cursor: pointer;
+  padding: 12px 0 ;
+  border: 1px solid white;
+  margin: 12px 0;
+  padding: 13px;
+  border-radius: 5px;
+  
+}
+
+.songList ul li img{
+  width: 50px;
+  border:2px solid black;
+  border-radius: 50%;
+}
+
+.info {
+  width: 100%;
+  font-size: 17px;
+  padding:12px 0 ;
+}
+  
+.abovebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  width: 100%;
+}
+
+.songinfo {
+  flex: 1; /* left side पूरी जगह लेगा */
+  text-align: left;
+  padding: 0px 10px;
+  white-space: nowrap;        /* एक लाइन में रखेगा */
+  overflow-x: auto;           /* ज़्यादा text आने पर scroll होगा */
+  scrollbar-width: thin;      /* thin scrollbar (Firefox) */
+}
+
+.songtime {
+  flex-shrink: 0; /* छोटा नहीं होगा */
+  text-align: right;
+  padding: 0px 10px;
+  min-width: 80px; /* समय के लिए fix space */
+}
+
+/* Song info scroll smooth दिखे */
+.songinfo::-webkit-scrollbar {
+  height: 4px;
+}
+.songinfo::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+    
+    /* Search bar styles */
+.nav input[type="text"] {
+  width: 250px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #2a2a2a; /* Dark background to blend in */
+  color: white;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.nav input[type="text"]::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.nav input[type="text"]:focus {
+  background-color: #3b3b3b;
+  box-shadow: 0 0 8px rgba(100, 255, 100, 0.4);
+}
+
+/* ---- MOBILE RESPONSIVE CSS ---- */
+@media (max-width: 768px) {
+  /* Default: Sidebar hidden, hamburger hidden on desktop */
+.right{
+  width:100%;
+  height: 100vh;
+  position: relative;
+  
+}
+/* Final Card Container */
+.card-container {
+  margin: 15px;
+  display: flex;
+  flex-wrap: wrap;         /* Spotify-style grid */
+  gap: 15px;
+  max-height: 70vh;        /* vertical limit */
+  overflow-y: auto;        /* vertical scroll */
+  overflow-x: hidden;      /* no horizontal scroll */
+}
+
+/* Final Card */
+.card {
+  width: 150px;            /* fixed width */
+  height: 200px;           /* fixed height */
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #252525;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;           /* thumbnail height */
+  object-fit: cover;       /* crop fit */
+  border-radius: 4px;
+}
+
+.card > * {
+  padding-top: 6px;
+  font-size: 14px;         /* compact text */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover {
+  background-color: black;
+  --a: 1;
+}
+
+    .songinfo {
+      flex: 1; /* Allows songinfo to take available space */
+      text-align: right; /* Adjust text alignment as needed */
+      padding: 0px 9px;
+      width:25px;
+      
+    }
+    
+
+    
+
+.songList{
+  height: 60vh;
+  overflow: auto;
+}
+    /* Search bar styles */
+.nav input[type="text"] {
+  width: 250px;
+  padding: 10px 16px;
+  margin-left:  50px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #2a2a2a; /* Dark background to blend in */
+  color: white;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.nav input[type="text"]::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.nav input[type="text"]:focus {
+  background-color: #3b3b3b;
+  box-shadow: 0 0 8px rgba(100, 255, 100, 0.4);
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* Drawer Hidden Default */
+/* Default: Sidebar hidden, hamburger hidden on desktop */
+.hamburger { 
+  display: none;
+  font-size: 2.2rem;
+  position: fixed;
+  top: 14px; left: 16px;
+  color: #fff;
+  z-index: 1101;
+  cursor: pointer;
+}
+
+/* Sidebar hidden by default (mobile) */
+.left {
+  position: fixed;
+  top: 0; left: -80vw;
+  width: 74vw;
+  min-width: 180px;
+  max-width: 320px;
+  height: 100vh;
+  background: #181818;
+  z-index: 1100;
+  box-shadow: 2px 0 18px rgba(0,0,0,0.4);
+  transition: left 0.3s cubic-bezier(.69,.03,.49,.99);
+}
+
+/* Overlay background */
+#sidebar-overlay {
+  display: none;
+  position: fixed; left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.26);
+  z-index: 1099;
+}
+
+/* Drawer open state */
+.left.open { left: 0; }
+#sidebar-overlay.active { display: block; }
+
+/* Hamburger & drawer only on mobile */
+@media (max-width: 900px) {
+  .hamburger { display: block; }
+  .left {    /* your original .left styles are overwritten here */    }
+}
+
+/* Desktop: sidebar as original */
+@media (min-width: 901px) {
+  .hamburger { display: none; }
+  .left { 
+    position: static !important;
+    width: 35% !important;
+    box-shadow: none !important;
+    transition: none !important;
+    height: auto !important;
+    max-width: none !important;
+  }
+  #sidebar-overlay { display: none !important; }
+}
+
+/* Optional: Close icon in sidebar (for mobile UX) */
+.left .close-btn {
+  display: block;
+  font-size: 2rem;
+  padding: 16px;
+  text-align: right;
+  cursor: pointer;
+  color: #fff;
+}
+
